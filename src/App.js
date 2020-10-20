@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Image } from 'antd';
 import './App.css';
 import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import {
@@ -9,6 +10,7 @@ import {
 } from "react-router-dom";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import dashboardIcon from './images/icons/dashboard.svg';
+import home from './images/icons/home.svg';
 class Home extends Component {
   render() {
     return (
@@ -44,10 +46,18 @@ function App() {
                     }
                 }}
             >
-                <SideNav.Nav defaultSelected="home">
-                    <NavItem eventKey="home">
+                <SideNav.Nav defaultSelected="dashboard">
+                    <NavItem>
                         <NavIcon>
-                            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
+                           <Image src={home}/>
+                        </NavIcon>
+                        <NavText>
+                            Home
+                        </NavText>
+                    </NavItem>
+                    <NavItem eventKey="dashboard">
+                        <NavIcon>
+                           <Image src={dashboardIcon}/>
                         </NavIcon>
                         <NavText>
                             Home
@@ -64,7 +74,7 @@ function App() {
                 </SideNav.Nav>
             </SideNav>
             <main>
-                <Route path="/home" component={props => <Home />} />
+                <Route path="/dashboard" component={props => <Home />} />
                 <Route path="/devices" component={props => <Devices />} />
             </main>
         </React.Fragment>
