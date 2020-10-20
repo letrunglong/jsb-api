@@ -11,7 +11,7 @@ import {
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import dashboardIcon from './images/icons/dashboard.svg';
 import home from './images/icons/home.svg';
-class Home extends Component {
+class Dashboard extends Component {
   render() {
     return (
       <div>
@@ -35,9 +35,9 @@ class Devices extends Component {
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router style={{ maxWidth:'220px',order:-1}}>
     <Route render={({ location, history }) => (
-        <React.Fragment>
+        <React.Fragment style={{ maxWidth:'220px',order:-1}}>
             <SideNav
                 onSelect={(selected) => {
                     const to = '/' + selected;
@@ -46,14 +46,11 @@ function App() {
                     }
                 }}
             >
-                <SideNav.Nav defaultSelected="dashboard">
+                <SideNav.Nav defaultSelected="dashboard" >
                     <NavItem>
                         <NavIcon>
                            <Image src={home}/>
                         </NavIcon>
-                        <NavText>
-                            Home
-                        </NavText>
                     </NavItem>
                     <NavItem eventKey="dashboard">
                         <NavIcon>
@@ -74,7 +71,7 @@ function App() {
                 </SideNav.Nav>
             </SideNav>
             <main>
-                <Route path="/dashboard" component={props => <Home />} />
+                <Route path="/dashboard" component={props => <Dashboard />} />
                 <Route path="/devices" component={props => <Devices />} />
             </main>
         </React.Fragment>
