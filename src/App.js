@@ -35,9 +35,9 @@ class Devices extends Component {
 function App() {
   return (
     <div className="App">
-      <Router style={{ maxWidth:'220px',order:-1}}>
+      <Router>
     <Route render={({ location, history }) => (
-        <React.Fragment style={{ maxWidth:'220px',order:-1}}>
+        <React.Fragment>
             <SideNav
                 onSelect={(selected) => {
                     const to = '/' + selected;
@@ -46,15 +46,11 @@ function App() {
                     }
                 }}
             >
-                <SideNav.Nav defaultSelected="dashboard" >
-                    <NavItem>
+                <SideNav.Toggle />
+                <SideNav.Nav defaultSelected="home">
+                    <NavItem eventKey="home">
                         <NavIcon>
-                           <Image src={home}/>
-                        </NavIcon>
-                    </NavItem>
-                    <NavItem eventKey="dashboard">
-                        <NavIcon>
-                           <Image src={dashboardIcon}/>
+                            <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} />
                         </NavIcon>
                         <NavText>
                             Home
@@ -71,14 +67,14 @@ function App() {
                 </SideNav.Nav>
             </SideNav>
             <main>
-                <Route path="/dashboard" component={props => <Dashboard />} />
+                <Route path="/home" component={props => <Dashboard />} />
                 <Route path="/devices" component={props => <Devices />} />
             </main>
         </React.Fragment>
     )}
     />
 </Router>
-    </div>
+  </div>
   );
 }
 
