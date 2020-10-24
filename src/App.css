@@ -145,7 +145,6 @@ main.main{
   float: right;
   line-height: 0;
 }
-.App .container .main .packages{}
 .App .container .main .packages .packages-content{
   display: flex;
   flex-wrap: wrap;
@@ -154,7 +153,7 @@ main.main{
   /* overflow-y: scroll; */
   /* overflow-x: hidden; */
 }
-/* custom scrollbar */
+    /* custom scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -217,7 +216,10 @@ main.main{
   border: none !important;
   color: white !important;
 }
-.ant-modal-content .ant-modal-footer .ant-btn {
+.ant-modal-header{
+  border-bottom: 1px solid white !important;
+}
+.ant-modal-content .ant-modal-footer{
   display: none;
 }
 .ant-modal-body .modal.packages .confirm{
@@ -241,4 +243,101 @@ main.main{
   margin-right: 10px;
 }
 
+/* ************Wallets CSS******************* */
 
+.App .container .main .wallets .wallets-content .wallets-top{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.App .container .main .wallets .wallets-content .wallets-top .item{
+  width: 48%;
+  background-color: #5C327D;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+.App .container .main .wallets .wallets-content .wallets-top .item .item-top{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+  font-weight: 600;
+}
+.App .container .main .wallets .wallets-content .wallets-top .item  .item-top .top-left >*{
+  display: inline;
+  
+}
+.App .container .main .wallets .wallets-content .wallets-top .item  .item-top .top-left img{
+  margin-right: 27px;
+}
+.App .container .main .wallets .wallets-content .wallets-top .item  .item-top .top-left .ant-image-img{
+  width: auto;
+}
+.App .container .main .wallets .wallets-content .wallets-top .item .item-top .top-right{
+  font-size: 30px;
+  margin-top: -5px;
+}
+.App .container .main .wallets .wallets-content .wallets-top .item .item-bot{
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid white;
+  padding: 15px 20px;
+}
+.App .container .main .wallets .wallets-content .wallets-top .item .item-bot > *{
+  cursor: pointer;
+}
+/* **********Wallets bottom*********** */
+.App .container .main .wallets .wallets-content .wallets-bottom{
+  background-color: #613887;
+  font-size: 20px;
+  padding: 15px 20px;
+  margin-top: 30px;
+  max-height: 600px;
+}
+.App .container .main .wallets .wallets-content .wallets-bottom .title{
+  margin-top: 0;
+  line-height: 1;
+}
+.App .container .main .wallets .wallets-content .wallets-bottom .content{
+  display: flex;
+  justify-content: space-between;
+}
+.App .container .main .wallets .wallets-content .wallets-bottom .content.one{
+  margin-top: 30px;
+}
+
+/* modal wallets css  */
+.img-scan{
+  width: 100%;
+  text-align: center;
+}
+.img-scan img{
+  width: auto;
+}
+.text-scan{
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+  border-top: 1px solid white;
+}
+.button-amount{
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+}
+.button-amount > *{
+  margin-left: 15px;
+}
+.wallet-confirm{
+  text-align: center;
+  font-size: 30px;
+  width: 100%;
+  line-height: 10px;
+  margin-top: 0;
+  position: relative;
+  top: 15px;
+  cursor: pointer;
+}
