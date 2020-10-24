@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1186" height="175" viewBox="0 0 1186 175">
+  <g id="Group_202" data-name="Group 202" transform="translate(-140 -178)">
+    <g id="Rectangle_8" data-name="Rectangle 8" transform="translate(140 178)" fill="#502e75" stroke="#fff" stroke-width="1" opacity="0.73">
+      <rect width="1186" height="175" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="1185" height="174" rx="4.5" fill="none"/>
+    </g>
+    <g id="Rectangle_15" data-name="Rectangle 15" transform="translate(158 266)" fill="#502e75" stroke="#fff" stroke-width="1">
+      <rect width="565" height="57" rx="5" stroke="none"/>
+      <rect x="0.5" y="0.5" width="564" height="56" rx="4.5" fill="none"/>
+    </g>
+    <g id="Group_48" data-name="Group 48" transform="translate(0 -350)">
+      <text id="Referals_link" data-name="Referals link" transform="translate(160 578)" fill="#fff" font-size="30" font-family="Muli-SemiBold, Muli" font-weight="600"><tspan x="0" y="0">Referals link</tspan></text>
+      <g id="Icon_feather-copy" data-name="Icon feather-copy" transform="translate(675 627)">
+        <path id="Path_4" data-name="Path 4" d="M16.5,13.5H30a3,3,0,0,1,3,3V30a3,3,0,0,1-3,3H16.5a3,3,0,0,1-3-3V16.5A3,3,0,0,1,16.5,13.5Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_5" data-name="Path 5" d="M7.5,22.5H6a3,3,0,0,1-3-3V6A3,3,0,0,1,6,3H19.5a3,3,0,0,1,3,3V7.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <text id="https:_pegaswap.com_signup_sponsorkey_winwin" data-name="https://pegaswap.com/signup?sponsorkey=winwin" transform="translate(173 652)" fill="#fff" font-size="20" font-family="Muli-SemiBold, Muli" font-weight="600"><tspan x="0" y="0">https://pegaswap.com/signup?sponsorkey=winwin</tspan></text>
+    </g>
+    <text id="Referals_code" data-name="Referals code" transform="translate(746 228)" fill="#fff" font-size="30" font-family="Muli-SemiBold, Muli" font-weight="600"><tspan x="0" y="0">Referals code</tspan></text>
+    <g id="Group_238" data-name="Group 238">
+      <g id="Rectangle_13" data-name="Rectangle 13" transform="translate(744 266)" fill="#502e75" stroke="#fff" stroke-width="1">
+        <rect width="565" height="57" rx="5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="564" height="56" rx="4.5" fill="none"/>
+      </g>
+      <g id="Icon_feather-copy-2" data-name="Icon feather-copy" transform="translate(1261 277)">
+        <path id="Path_4-2" data-name="Path 4" d="M16.5,13.5H30a3,3,0,0,1,3,3V30a3,3,0,0,1-3,3H16.5a3,3,0,0,1-3-3V16.5A3,3,0,0,1,16.5,13.5Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Path_5-2" data-name="Path 5" d="M7.5,22.5H6a3,3,0,0,1-3-3V6A3,3,0,0,1,6,3H19.5a3,3,0,0,1,3,3V7.5" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <text id="winwin" transform="translate(759 302)" fill="#fff" font-size="20" font-family="Muli-SemiBold, Muli" font-weight="600"><tspan x="0" y="0">winwin</tspan></text>
+    </g>
+  </g>
+</svg>

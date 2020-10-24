@@ -1,38 +1,244 @@
-.App {
+.App, .root, main {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100%;
+  width: 100%;
   color: white;
+  overflow: hidden;
+}
+main.main{
+  height: 
+  872px
+  /* 100% */
+  ;
+  padding-left: 100px;
+  text-align: start ;
+}
+/* sidebar css */
+.sidenav---sidenav---_2tBP{
+  background-color: #5B337E !important;
+  border-right: 1px solid white !important;
+  width: 100px;
+}
+.sidenav---sidenav---_2tBP .sidenav---sidenav-nav---3tvij .ant-image{
+  margin-left: 16px;
+  margin-top: 40px;
+}
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T,.sidenav---sidenav-navitem---uwIJ-.sidenav---selected---1EK3y.sidenav---highlighted---oUx9u{
+  padding-top: 0 !important;
+  height: 130px !important;
+}
+.sidenav---sidenav-nav---3tvij > .sidenav---sidenav-navitem---uwIJ- > .sidenav---navitem---9uL5T .sidenav---navicon---3gCRo p{
+  position: relative;
+  bottom:15px; left: 10px;
+}
+.sidenav---sidenav-toggle---1KRjR{
+  background-image: url('./images/icons/home.svg') !important;
+  z-index: 0 !important;
+  background-size: cover;
+  margin-left: 13px !important;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+  
+}
+/* navbar */
+.App .top-bar{
+  display: flex;
+  margin-left: 64px;
+  justify-content: space-between;
+  padding: 5px 10px;
+  background:#5B337E !important;
+  border-bottom: 1px solid white !important;
+}
+.App .top-bar .top-bar-1{
+  line-height: 54px;
+  margin-left: 45px;
+}
+.App .top-bar .top-bar-2{
+  display: flex;
+}
+.App .top-bar .top-bar-2 .name-bar{
+  line-height: 54px;
+  margin-right: 15px;
+}
+.App .container .main{
+  padding-top: 0;
+}
+.App .container .main .container{
+  width: 80%;
+  height: 100%;
+  margin-left: 100px;
+
+}
+.App .container .main .title{
+  font-size: 30px;
+  margin: 35px 0px;
+  font-weight: 600;
+}
+.App .container .main .dashboard .dashboard-search{
+  display: flex;
+  justify-content: space-between;
+  background-color: #502E75;
+  padding: 30px 15px;
+  padding-top: 5px;
+  font-size: 25px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.App .container .main .dashboard .dashboard-search .link-copy{
+  display: flex;
+  width: 100%;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-left: 0;
+  height: 50px;
+  line-height: 0px;
+  padding: 0 20px;
+  padding-right: 0;
+}
+.App .container .main .dashboard .dashboard-search .link-copy p{
+  
+  margin-right: 0;
+  margin-top: 20px;
+}
+.App .container .main .dashboard .dashboard-search .link-copy.text{
+  width: 700px;
+}
+.App .container .main .dashboard .dashboard-search .link-copy img.ant-image-img{
+  margin-top: 8px !important;
+  margin-left: 50px !important;
+  width: auto;
+  margin-right: 15px;
+}
+.App .container .main .dashboard .dashboard-search .link-copy.text img.ant-image-img{
+  margin-left: 555px !important;
+}
+.App .container .main .dashboard .dashboard-content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.App .container .main .dashboard .dashboard-content .one-items{
+  display: flex;
+  width: 30%;
+  justify-content: space-between;
+  background-color: #5C327D;
+  padding: 25px 20px;
+  border-radius: 5px;
+  border: 1px solid white;
+  font-size: 30px;
+  line-height: 0;
+  font-weight: bold;
+  margin-top: 40px;
+}
+.App .container .main .dashboard .dashboard-content .one-items .text-dashboard{
+  margin-top: 20px;
+  float: right;
+  text-align: right;
+}
+.App .container .main .dashboard .dashboard-content .one-items:first-child .text-dashboard .price-dashboard{
+  position: relative;
+  top: 15px;
+}
+.App .container .main .dashboard .dashboard-content .one-items .text-dashboard .title-dashboard{
+  font-weight: normal;
+  font-size: 20px;
+  float: right;
+  line-height: 0;
+}
+.App .container .main .packages{}
+.App .container .main .packages .packages-content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 770px;
+  /* overflow-y: scroll; */
+  /* overflow-x: hidden; */
+}
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
 }
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.App .container .main .packages .packages-content .item{
+  width: 32%;
+  background-color: #5C327D;
+  
+  font-weight: 600;
+}
+.App .container .main .packages .packages-content .item.top{
+  margin-top: 20px;
+}
+.App .container .main .packages .packages-content .item .item-top{
+  display: flex;
+  width: 100%;
+  padding: 20px 20px;
+  /* justify-content: flex-start; */
+}
+.App .container .main .packages .packages-content .item .item-top .item-top-left{
+  width: 77%;
+  display: flex;
+  line-height: 0;
+}
+.App .container .main .packages .packages-content .item .item-top .item-top-left .item-text{
+  margin-top: 10px;
+  margin-left: 15px;
+  font-size: 15px;
+}
+.App .container .main .packages .packages-content div.item .item-top .item-top-right{
+  width: 20%;
+  font-size: 30px;
+  position: relative;
+  top: -10px;left: 0px;
+}
+.App .container .main .packages .packages-content .item .item-bottom{
+  cursor: pointer;
+  text-align: center;
+  border-top: 1px solid white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 100%;
+}
+.ant-modal-content ,.ant-modal-header,.ant-modal-footer,.ant-modal-title{
+  background-color: #29153A !important;
+  border: none !important;
+  color: white !important;
+}
+.ant-modal-content .ant-modal-footer .ant-btn {
+  display: none;
+}
+.ant-modal-body .modal.packages .confirm{
+  font-size: 30px;
+  width: 100%;
+  border-top: 1px solid white;
+  margin-top: 60px;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 10px;
+}
+.ant-modal-body .modal.packages .button-modal{
+  margin-top: 18px;
+  float: right;
+  
+}
+.ant-modal-body .modal.packages .button-modal >*{
+  border-radius: 3px;
+}
+.ant-modal-body .modal.packages .button-modal >:first-child{
+  margin-right: 10px;
+}
+
+

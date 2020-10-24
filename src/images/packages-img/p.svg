@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="61" height="61" viewBox="0 0 61 61">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.423" y1="0.995" x2="0.921" y2="-0.134" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#df1c4d"/>
+      <stop offset="0.048" stop-color="#ca1e5d"/>
+      <stop offset="0.119" stop-color="#b32170"/>
+      <stop offset="0.196" stop-color="#a2247e"/>
+      <stop offset="0.279" stop-color="#982586"/>
+      <stop offset="0.383" stop-color="#952689"/>
+      <stop offset="0.498" stop-color="#902a8b"/>
+      <stop offset="0.634" stop-color="#833993"/>
+      <stop offset="0.781" stop-color="#6d51a1"/>
+      <stop offset="0.935" stop-color="#4f72b4"/>
+      <stop offset="0.95" stop-color="#4c76b6"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.257" y1="3.788" x2="0.755" y2="-2.951" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="Group_225" data-name="Group 225" transform="translate(-159.5 -89.5)">
+    <g id="Group_129" data-name="Group 129">
+      <g id="Group_76" data-name="Group 76" transform="translate(-2973.692 1346.328)">
+        <g id="Group_74" data-name="Group 74" transform="translate(3133.497 -1256.523)">
+          <circle id="Ellipse_12" data-name="Ellipse 12" cx="30" cy="30" r="30" transform="translate(0.195 0.195)" fill="#fff" stroke="#72007b" stroke-miterlimit="10" stroke-width="1"/>
+        </g>
+        <g id="Group_75" data-name="Group 75" transform="translate(3157.569 -1242.976)">
+          <path id="Path_23" data-name="Path 23" d="M3206.872-1215.094a10.254,10.254,0,0,1-.717,3.925,8.29,8.29,0,0,1-2.052,2.983,9.182,9.182,0,0,1-3.274,1.906,14.18,14.18,0,0,1-4.631.673h-3.3v10.45a.506.506,0,0,1-.1.314.663.663,0,0,1-.313.213,3.065,3.065,0,0,1-.583.135,6.418,6.418,0,0,1-.931.056,6.426,6.426,0,0,1-.931-.056,3.328,3.328,0,0,1-.594-.135.6.6,0,0,1-.315-.213.552.552,0,0,1-.089-.314v-26.776a1.554,1.554,0,0,1,.471-1.278,1.634,1.634,0,0,1,1.054-.381h6.212q.942,0,1.805.078a17.153,17.153,0,0,1,2.041.337,8.4,8.4,0,0,1,2.4.965,7.572,7.572,0,0,1,2.074,1.738,7.491,7.491,0,0,1,1.312,2.388A9.309,9.309,0,0,1,3206.872-1215.094Zm-4.059.314a6.023,6.023,0,0,0-.661-2.96,4.6,4.6,0,0,0-1.637-1.772,5.51,5.51,0,0,0-2.018-.74,13.654,13.654,0,0,0-2.03-.157H3192.9v11.639h3.476a8.1,8.1,0,0,0,2.9-.448,5.458,5.458,0,0,0,1.939-1.245,5.222,5.222,0,0,0,1.189-1.906A7.02,7.02,0,0,0,3202.813-1214.78Z" transform="translate(-3189.044 1223.593)" fill="url(#linear-gradient)"/>
+        </g>
+        <rect id="Rectangle_14" data-name="Rectangle 14" width="28.431" height="2.88" rx="1.44" transform="translate(3149.802 -1212.379)" fill="url(#linear-gradient-2)"/>
+      </g>
+    </g>
+  </g>
+</svg>
