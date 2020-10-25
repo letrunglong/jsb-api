@@ -119,7 +119,6 @@ class Content extends Component {
     }
 }
 
-
 class Wallets extends Component {
     renderItems() {
         let arr = [1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]

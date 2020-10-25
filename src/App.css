@@ -297,12 +297,20 @@ main.main{
   margin-top: 0;
   line-height: 1;
 }
-.App .container .main .wallets .wallets-content .wallets-bottom .content{
+.App .container .main .wallets .wallets-content .wallets-bottom .content,.ant-modal-body .modal-content .content{
   display: flex;
   justify-content: space-between;
 }
 .App .container .main .wallets .wallets-content .wallets-bottom .content.one{
   margin-top: 30px;
+}
+.ant-modal-body .modal-content .content,.ant-modal-body .title-pools-modal{
+  border: 1px solid white;
+  font-size: 20px;
+  padding: 10px 10px;
+}
+.ant-modal-body .title-pools-modal{
+  border-bottom: 1px solid white;
 }
 
 /* modal wallets css  */
@@ -339,5 +347,47 @@ main.main{
   margin-top: 0;
   position: relative;
   top: 15px;
+  cursor: pointer;
+}
+
+/* pools tab css */
+
+.App .container .main .pools .pools-content{
+  width: 100%;
+  font-size: 15px;
+  max-height: 600px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.App .container .main .pools .pools-content .one-item{
+  width: 32%;
+  border-radius: 5px;
+  background-color: #623787;
+}
+.App .container .main .pools .pools-content .one-item.pos{
+  margin-top: 30px;
+}
+.App .container .main .pools .pools-content .one-item .top,.App .container .main .pools .pools-content .one-item .bot{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+.App .container .main .pools .pools-content .one-item .top .top-left p{
+  display: inline;
+  margin-left: 15px;
+  font-weight: 700;
+}
+.App .container .main .pools .pools-content .one-item .top .top-right{
+  font-size: 30px;
+  font-weight: 600;
+}
+.App .container .main .pools .pools-content .one-item .bot{
+  border-top: 1px solid white;
+  padding: 15px;
+  padding-bottom: 5px;
+  
+}
+.App .container .main .pools .pools-content .one-item .bot > *{
   cursor: pointer;
 }
