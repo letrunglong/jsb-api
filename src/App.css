@@ -117,6 +117,9 @@ main.main{
   flex-wrap: wrap;
   justify-content: space-between;
 }
+.App .container .main .dashboard .dashboard-content.networks-content{
+  margin-bottom: 40px;
+}
 .App .container .main .dashboard .dashboard-content .one-items{
   display: flex;
   width: 30%;
@@ -129,6 +132,9 @@ main.main{
   line-height: 0;
   font-weight: bold;
   margin-top: 40px;
+}
+.App .container .main .dashboard .dashboard-content .one-items.istop{
+  margin-top: 0px;
 }
 .App .container .main .dashboard .dashboard-content .one-items .text-dashboard{
   margin-top: 20px;
@@ -390,4 +396,191 @@ main.main{
 }
 .App .container .main .pools .pools-content .one-item .bot > *{
   cursor: pointer;
+}
+
+/* settings css */
+
+.App .container .main .settings .settings-content{
+  margin-top: 50px;
+}
+.App .container .main .settings .settings-content .ant-tabs-top > .ant-tabs-nav::before{
+  visibility: hidden;
+}
+.ant-tabs.ant-tabs-top{
+  color: white ;
+  width: 100%;
+}
+.ant-tabs-tab.ant-tabs-tab-active,.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
+  color: white !important;
+  background-color: #8F45C8;
+  padding: 30px 20px;
+  /* padding-bottom: 40px; */
+}
+.ant-tabs-nav-list{
+  width: 100%;
+  justify-content: space-between;
+  background-color: #643887;
+  
+}
+.ant-tabs-tab{
+  margin: 0 !important;
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+}
+.ant-tabs-ink-bar{
+  visibility: hidden;
+}
+.ant-tabs-nav-list .ant-tabs-tab:first-child{
+
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+}
+.ant-tabs-nav-list .ant-tabs-tab:first-child{
+  background-image: url('./images/settings-img/personnal.svg') !important;
+}
+.ant-tabs-nav-list .ant-tabs-tab:nth-child(2){
+  background-image: url('./images/settings-img/authen.svg') !important;
+}
+.ant-tabs-nav-list .ant-tabs-tab:nth-child(3){
+  background-image: url('./images/settings-img/twofactor.svg') !important;
+}
+.ant-tabs-nav-list .ant-tabs-tab:nth-child(4){
+  background-image: url('./images/settings-img/security.svg') !important;
+}
+.ant-tabs-nav-list .ant-tabs-tab{
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+}
+.ant-tabs-tab::after{
+  position: relative;
+  top: -20px;right: 125px;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 60px;
+}
+.ant-tabs-tab::before{
+  position: relative;
+  font-size: 14px;
+  top: 50px;left: 100px;
+}
+.ant-tabs-tab:first-child::after
+{
+  content: 'Personal';
+}
+.ant-tabs-tab:nth-child(2)::after{
+  content: 'Authentication';
+  right: 100px;
+}
+.ant-tabs-tab:nth-child(3)::after{
+  content: 'Two-factor';
+  right: 115px;
+}
+.ant-tabs-tab:nth-child(4)::after{
+  content: 'Security';
+  right: 110px;
+}
+.ant-tabs-tab:first-child::before{
+  content: 'Update your personal infor';
+  
+}
+.ant-tabs-tab:nth-child(2)::before{
+  content: 'Change your password';
+  left: 150px;
+
+}
+.ant-tabs-tab:nth-child(3)::before{
+  content: 'Protect your account with 2FA';
+
+}
+.ant-tabs-tab:nth-child(4)::before{
+  content: 'Multi Layered Security';
+}
+.ant-tabs-tab-btn{
+  visibility: hidden;
+}
+.App .container .main .settings .settings-content{
+  height: 100%;
+}
+.App .container .main .settings .settings-content .tab-content{
+  background-color:rgba(112,52,135,0.7);
+  max-height: 700px;
+  margin-top: -16px;
+  padding: 10px 20xp;
+}
+.App .container .main .settings .settings-content .tab-content.personal-content .parent-flex{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+  font-size: 20px;
+  
+}
+.App .container .main .settings .settings-content .tab-content.personal-content .parent-flex .child-1,
+.App .container .main .settings .settings-content .tab-content.personal-content .parent-flex .child-2,
+.App .container .main .settings .settings-content .tab-content .content .one-content .child-1,
+.App .container .main .settings .settings-content .tab-content .content .one-content .child-2
+{
+  width: 47%;
+  
+}
+.App .container .main .settings .settings-content .tab-content .ant-input{
+  padding: 10px 10px;
+  background-color: #502E75 !important;
+  color: white;
+  font-size: 20px;
+}
+.ant-input-affix-wrapper{
+  background-color: #502E75 !important;
+}
+.ant-input-group-addon,.App .container .main .settings .settings-content .tab-content .ant-btn-primary{
+  background-color:#27777A !important;
+}
+.ant-input-group-addon{
+  border: 1px solid white !important;
+  border-radius: 5px !important;
+}
+.App .container .main .settings .settings-content .tab-content .ant-btn-primary{
+  padding: 20px 10px;
+  border: none;
+}
+.App .container .main .settings .settings-content .tab-content.personal-content .parent-flex .child-2 .btn-save,
+.App .container .main .settings .settings-content .tab-content .content .one-content .child-2 .btn-save{
+  width: 100%;
+  padding: 25px 0px;
+  background-color: #27777A;
+  color: white;
+  margin-top: 30px;
+  font-size: 20px;
+  border-radius: 5px;
+
+}
+.App .container .main .settings .settings-content .tab-content.personal-content .parent-flex .child-2 .btn-save span,
+.App .container .main .settings .settings-content .tab-content .content .one-content .child-2 .btn-save span{
+  position: relative;
+  bottom: 15px;
+}
+.App .container .main .settings .settings-content .tab-content.authen-content .title{
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.App .container .main .settings .settings-content .tab-content.authen-content .title >*{
+  width: 47%;
+}
+.App .container .main .settings .settings-content .tab-content{
+  padding: 20px 20px;
+}
+.App .container .main .settings .settings-content .tab-content .content .one-content{
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+}
+.App .container .main .settings .settings-content .tab-content .content .one-content .child-2 .btn-save{
+  margin-top: 50px;
+}
+.App .container .main .settings .settings-content .tab-content .content .one-content .child-2 .ant-input-group-wrapper.ant-input-search .ant-btn.ant-btn-primary.ant-input-search-button span{
+ position: relative;
+ bottom: 8px;
 }
