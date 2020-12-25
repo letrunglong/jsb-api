@@ -19,6 +19,7 @@ import Wallets from './Components/Wallets';
 import Pools from './Components/Pools';
 import Networks from './Components/Networks';
 import Settings from './Components/Settings';
+import { AuthLogin } from './Components/Auth/Login/Login';
 
 
 var sectionStyle = {
@@ -93,20 +94,19 @@ function App() {
                 </SideNav.Nav>
               </SideNav>
               <main className='main'>
-                <Route path="/dashboard" component={props => <Dashboard />} />
-                <Route path="/packages" component={props => <Packages />} />
-                <Route path="/wallets" component={props => <Wallets />} />
-                <Route path="/pools" component={props => <Pools />} />
-                <Route path="/networks" component={props => <Networks />} />
-                <Route path="/settings" component={props => <Settings />} />
+                <Route path="/login" component={props => <AuthLogin />} />
+                <Route exact path="/dashboard" component={props => <Dashboard />} />
+                <Route exact path="/packages" component={props => <Packages />} />
+                <Route exact path="/wallets" component={props => <Wallets />} />
+                <Route exact path="/pools" component={props => <Pools />} />
+                <Route exact path="/networks" component={props => <Networks />} />
+                <Route exact path="/settings" component={props => <Settings />} />
               </main>
             </React.Fragment>
           )}
           />
         </Router>
-
       </div>
-
     </div>
   );
 }
