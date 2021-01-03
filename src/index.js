@@ -4,12 +4,11 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
-import configStore from "./Components/redux/configStore"
+import { store } from 'Components/Auth/redux/store';
 
-const initialState = {};
-const store = configStore(initialState);
+
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store = {store}>
     <App />
   </Provider>,
   document.getElementById('root')

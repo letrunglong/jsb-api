@@ -7,9 +7,11 @@ import global from '../images/dashboard-img/global.svg';
 import totalCart from '../images/dashboard-img/total.svg';
 import totalCommission from '../images/dashboard-img/pega.svg';
 import totalDirect from '../images/dashboard-img/direct.svg';
+import { connect } from 'react-redux';
 
 class Items extends Component {
     render() {
+        console.log(this.props.dataUser.data.customer_code);
         return (
             <div className='dashboard-search'>
                 <div className='search-1'>
@@ -22,7 +24,7 @@ class Items extends Component {
                 <div className='search-2'>
                     <p className='title'>Referals code</p>
                     <div className='link-copy text'>
-                        <p className='link-text'>winwin</p>
+                        <p className='link-text'>{this.props.dataUser.data.customer_code}</p>
                         <Image src={copyIcon} />
                     </div>
                 </div>
@@ -48,13 +50,15 @@ class OneDashBoardContent extends Component {
 
 
 class DashBoard extends Component {
+    
     render() {
+        // console.log(this.props.dataUser.data);
         return (
             <div className='dashboard container'>
                 <div className='title'>Dashboard</div>
-                <Items />
+                <Items {...this.props}/>
                 <div className='dashboard-content'>
-                    <OneDashBoardContent src={homeicon} price='Level title'/>
+                    <OneDashBoardContent src={homeicon} price={this.props.dataUser.data.levelInfoCommissions.title}/>
                     <OneDashBoardContent src={members} price='1000' title='Members'/>
                     <OneDashBoardContent src={global} price='$1000' title='Total networks buy'/>
                     <OneDashBoardContent src={totalCart} price='$1000' title='Total direct buy'/>
@@ -65,5 +69,9 @@ class DashBoard extends Component {
         );
     }
 }
-
-export default DashBoard;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        dataUser: state.dataUser
+    }
+}
+export default connect(mapStateToProps)(DashBoard)
