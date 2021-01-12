@@ -2,13 +2,12 @@ import { Form, Input, Button } from 'antd'
 import React from 'react'
 import { Link} from 'react-router-dom'
 import { connect} from "react-redux";
-import './styles.scss'
+import './style.scss'
 import { ROOT_API_URL, ROUTE } from 'common/constants';
 import { Component } from 'react';
 import axios from 'axios';
-import { TYPES } from './redux/contants';
 
-class AuthLogin extends Component {
+class Authforgot extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -23,14 +22,11 @@ class AuthLogin extends Component {
         })
     }
     onFinish = () => {
-        const {email,password} =this.state
-        let token = "123456"
+        const {email} =this.state
         let obj = {}
         obj.email = email
-        obj.password = password
-        obj.token = token
         axios({
-            url: `${ROOT_API_URL}/login`,
+            url: `${ROOT_API_URL}/forgot-password`,
             method: "POST",
             data: JSON.stringify(obj),
             headers: {
@@ -38,21 +34,20 @@ class AuthLogin extends Component {
             }
         }
             ).then( respon =>{
-                if(respon.data.status_code === 200){
-                    this.props.GetLogin(respon.data,respon.data.message)
-                    localStorage.setItem("isLogin",respon.data.data.token)
-                    this.props.history.push(ROUTE.DASHBOARD)
-                    
-                }
+                // if(respon.data.status_code === 200){
+                //     this.props.history.push(ROUTE.SIGNIN)
+                // }
+                console.log(respon.data);
+                // this.props.Getforgot("",respon.data.message,"sucess")
             })
     }
     render() {
-        return <div className="container login">
-            <div className="form-login">
-                <span className="title">SIGN IN</span>
-                <Form name="normal_login" onFinish={() => this.onFinish()} className="login-form">
+        return <div className="container forgot">
+            <div className="form-forgot">
+                <span className="title">REQUEST A NEW PASSWORD</span>
+                <Form name="normal_forgot" onFinish={() => this.onFinish()} className="forgot-form">
                     <Form.Item
-                        label="Username"
+                        label="Email"
                         name="email"
                         rules={[
                             {
@@ -64,18 +59,6 @@ class AuthLogin extends Component {
                         <Input name="email" onChange={(event)=>this.isChange(event)}/>
                     </Form.Item>
                     <Form.Item
-                        label="Password"
-                        name="password"
-                        rules={[
-                            {
-                                required: true,
-                                message: "Please input your password!",
-                            },
-                        ]}
-                    >
-                        <Input type="password" name="password" onChange={(event)=>this.isChange(event)} />
-                    </Form.Item>
-                    <Form.Item
                     >
                         <Button
                             htmlType="submit"
@@ -83,8 +66,8 @@ class AuthLogin extends Component {
                     </Form.Item>
                 </Form>
                 <div className="bottom">
-                    <Link to={ROUTE.FORGOT}>Forgot</Link>
-                    <Link to={ROUTE.SIGNUP}>SignUp</Link>
+                    <Link to={ROUTE.SIGNIN}>Signin</Link>
+                    <Link to={ROUTE.SIGNUP}>Signup</Link>
                 </div>
             </div>
         </div>
@@ -92,18 +75,19 @@ class AuthLogin extends Component {
 }
 const mapStateToProps = (state, ownProps) => {
     return {
-        // isLogin: state.isLogin
+        // isforgot: state.isforgot
     }
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        GetLogin: (dataUser,alertTitle) => {
-            dispatch({
-                type: TYPES.AUTH_LOGIN,
-                dataUser,
-                alertTitle
-            })
-        },
+        // Getforgot: (dataUser,alertTitle,alertType) => {
+        //     dispatch({
+        //         type: TYPES.AUTH_forgot,
+        //         dataUser,
+        //         alertTitle,
+        //         alertType
+        //     })
+        // }
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(AuthLogin)
+export default connect(mapStateToProps, mapDispatchToProps)(Authforgot)

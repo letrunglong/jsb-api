@@ -1,15 +1,17 @@
 import { USER_INFO_KEY } from "common/constants"
-import React from "react"
 import { TYPES } from "./contants"
 
 const LoginInitialState = {
     dataUser: USER_INFO_KEY,
-    isLogin:false
+    alertTitle: "",
+    isShowAlert:false
 }
 const LoginReducers = (state = LoginInitialState, action) => {
     switch (action.type) {
         case TYPES.AUTH_LOGIN:
-            return {...state,dataUser:action.dataUser,isLogin:!state.isLogin}
+            return { ...state, dataUser: action.dataUser, alertTitle: action.alertTitle, isShowAlert: true}
+        case TYPES.DISMISS_ALERT:
+            return { ...state, isShowAlert: !state.isShowAlert}
         default:
             return state
     }

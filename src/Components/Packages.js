@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import P from '../images/packages-img/p.svg';
-import { Image, Modal, Input, InputNumber, Button } from 'antd';
+import { Image, Modal, Input, Button } from 'antd';
 import 'antd/dist/antd.css';
 
 class OneItem extends Component {

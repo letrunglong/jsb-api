@@ -1,6 +1,5 @@
-import React from "react"
 import { combineReducers, createStore } from "redux"
-import  LoginReducers  from "../Login/redux/reducers"
+import  LoginReducers  from "../Auth/Login/redux/reducers"
 
 const allReducers = combineReducers({
     LoginReducers

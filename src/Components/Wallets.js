@@ -3,6 +3,7 @@ import { Image,Modal,Input, Button } from 'antd';
 import usdt from '../images/wallets-img/usdt.svg';
 import usj from '../images/wallets-img/usj.svg';
 import scan from '../images/wallets-img/scan.svg';
+import { connect } from 'react-redux';
 class WalletItem extends Component {
     constructor(props) {
         super(props);
@@ -107,8 +108,8 @@ class WalletItem extends Component {
 class Content extends Component {
     render() {
         return (
-            <div className={this.props.classname}>
-                <div>+100</div>
+            <div className={this.props.classname} key={this.props.key}>
+                <div>{this.props.amount}</div>
                 <div>fee 1</div>
                 <div>TRANSFER</div>
                 <div>abxs.xxx</div>
@@ -121,14 +122,15 @@ class Content extends Component {
 
 class Wallets extends Component {
     renderItems() {
-        let arr = [1, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-        let data = arr.map((value, index) => {
+        const walletsData = this.props.dataUser.data.wallet
+        let data = walletsData.map((value, index) => {
             let isTop = index > 0 ? 'one' : ''
-            return <Content classname={'content ' + isTop} />
+            return <Content classname={'content ' + isTop} key={value.id} amount={value.amount}/>
         })
         return data
     }
     render() {
+        console.log(this.props.dataUser.data.wallet);
         return (
             <div className='wallets container'>
                 <div className='title'>Wallets</div>
@@ -146,5 +148,9 @@ class Wallets extends Component {
         );
     }
 }
-
-export default Wallets;
+const mapStateToProps = (state, ownProps) => {
+    return {
+        dataUser: state.dataUser
+    }
+}
+export default connect(mapStateToProps)(Wallets)

@@ -1,35 +1,36 @@
 import React, { Component } from 'react';
 import { Image } from 'antd';
 import './App.css';
-import Cookies from "js-cookie";
-import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route} from "react-router-dom";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-
-import Dashboard from './Components/Dashboard';
 import Packages from './Components/Packages';
 import Wallets from './Components/Wallets';
 import Pools from './Components/Pools';
 import Networks from './Components/Networks';
 import Settings from './Components/Settings';
 import AuthLogin from './Components/Auth/Login/Login';
+import Authforgot from './Components/Auth/forgot/index';
 import PublicLayout from './common/Layout/PublicLayouts';
 import PrivateLayout from './common/Layout/PrivateLayouts';
 import DashBoard from './Components/Dashboard';
 import { connect } from 'react-redux';
-
-
+import SignUpPage from 'Components/Auth/Register/Signup';
+import AlertMessages from "../src/common/alert/index"
+import { ROUTE } from 'common/constants';
+import avatar from "./images/icons/avatar.svg"
 const checkLogin = () => {
-  return true
-  const authToken = Cookies.get("token");
-  return Boolean(authToken);
-};
+  if (localStorage.getItem("isLogin")) {
+    return true
+  }
+  return false
+}
 const PublicRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
       render={(props) =>
-      // isLogin() ? (
-      //   <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+      //   checkLogin() ? (
+      //   <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
       // ) : 
       (
         <PublicLayout {...rest}>
@@ -63,17 +64,35 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   );
 };
 class App extends Component {
+  logOut = () => {
+    localStorage.removeItem("isLogin")
+    // console.log(localStorage.getItem("isLogin"));
+    return <Redirect to="/login" />
+  }
+  Loginn = () => {
+    if (localStorage.getItem("isLogin")) {
+    return <div className="nav-item">
+      <span className="name" onClick={() => this.logOut()}>
+        {this.props.dataUser.data.sponsor.first_name} {this.props.dataUser.data.sponsor.last_name}
+      </span>
+      <Image src={avatar} />
+    </div>
+    }
+  }
   render() {
-    console.log(this.props.isLogin );
-    console.log(+ this.props.dataUser);
     return (
-      <div className="App" >
+      <div className="App">
+        {
+          // this.Loginn()
+        }
+        <AlertMessages />
         <Router>
           <Route render={({ location, history }) => (
             <React.Fragment>
-              <PublicRoute exact path="/login" component={AuthLogin} />
-              <PrivateRoute exact path="/dashboard" component={DashBoard}
-              />
+              <PublicRoute exact path={ROUTE.SIGNIN} component={AuthLogin} />
+              <PublicRoute exact path={ROUTE.SIGNUP} component={SignUpPage} />
+              <PublicRoute exact path={ROUTE.FORGOT} component={Authforgot} />
+              <PrivateRoute exact path="/dashboard" component={DashBoard} />
               <PrivateRoute exact path="/packages" component={Packages} />
               <PrivateRoute exact path="/wallets" component={Wallets} />
               <PrivateRoute exact path="/pools" component={Pools} />
@@ -91,7 +110,6 @@ class App extends Component {
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    isLogin: state.isLogin,
     dataUser: state.dataUser
   }
 }

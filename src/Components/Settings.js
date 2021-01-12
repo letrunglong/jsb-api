@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import { Button, Input, Tabs } from 'antd'
-import person from '../images/settings-img/personnal.svg'
-import authen from '../images/settings-img/authen.svg'
-import secu from '../images/settings-img/security.svg'
-import twof from '../images/settings-img/twofactor.svg'
 import Search from 'antd/lib/input/Search';
 class LastElement extends Component {
   render() {

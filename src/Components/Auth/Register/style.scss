@@ -1,0 +1,87 @@
+.container{
+    width: 25%;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    .form-signup{
+        border-color: rgba(35,3,60,.94902);
+        box-shadow: 0 0 5px 5px rgba(0,0,0,.03);
+        background-color: rgba(35,3,60,.94902);
+        background-image: linear-gradient(to top right,rgba(214,6,145,.94902),#310468);
+        padding: 20px 30px;
+        border-radius: 5px;
+        .title{
+            font-size: 18px;
+            font-weight: 500;
+        }
+        .ant-form.ant-form-horizontal.signup-form{
+            .form-name{
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            }
+            .ant-row.ant-form-item{
+                display: block;
+                margin-bottom: 0;
+                .ant-col.ant-form-item-label{
+                    display: block;
+                    text-align: left;
+                    
+                    .ant-form-item-required{
+                        color: white;
+                    }
+
+                }
+                .ant-col.ant-form-item-control{
+                    .ant-form-item-explain.ant-form-item-explain-error{
+                        text-align: left;
+                    }
+                    .ant-form-item-control-input{
+                        .ant-form-item-control-input-content{
+                            .ant-input{
+                                border-radius: 5px;
+                            }
+                        }
+                    }
+                }
+                .ant-col.ant-form-item-control{
+                    
+                    .ant-form-item-control-input{
+                        
+                        .ant-form-item-control-input-content{
+                            
+                            .ant-btn.ant-btn-primary{
+                                margin: 20px 0;
+                                border: 1px solid white;
+                                width: 100%;
+                                border: 1px solid white;
+                                font-size: 14px;
+                                font-weight: 600;
+                                border-radius: 5px;
+                                background-color: rgba(35,3,60,.94902);
+                                background-image: linear-gradient(90deg,rgba(214,6,145,.94902),#310468 90%)!important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .bottom{
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            line-height: 0px;
+            >*{
+                padding: 5px 10px;
+                border-radius: 5px;
+                color: white;
+            }
+        }
+    }
+    
+    
+}
