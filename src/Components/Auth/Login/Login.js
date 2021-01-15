@@ -42,7 +42,6 @@ class AuthLogin extends Component {
                     this.props.GetLogin(respon.data,respon.data.message)
                     localStorage.setItem("isLogin",respon.data.data.token)
                     this.props.history.push(ROUTE.DASHBOARD)
-                    
                 }
             })
     }

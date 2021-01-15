@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Image } from 'antd';
-import copyIcon from '../images/icons/copyicon.svg';
-import homeicon from '../images/icons/home.svg';
-import members from '../images/dashboard-img/frend.svg';
-import global from '../images/dashboard-img/global.svg';
-import totalCart from '../images/dashboard-img/total.svg';
-import totalCommission from '../images/dashboard-img/pega.svg';
-import totalDirect from '../images/dashboard-img/direct.svg';
+import copyIcon from '../../images/icons/copyicon.svg';
+import homeicon from '../../images/icons/home.svg';
+import members from '../../images/dashboard-img/frend.svg';
+import global from '../../images/dashboard-img/global.svg';
+import totalCart from '../../images/dashboard-img/total.svg';
+import totalCommission from '../../images/dashboard-img/pega.svg';
+import totalDirect from '../../images/dashboard-img/direct.svg';
 import { connect } from 'react-redux';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 class Items extends Component {
     render() {
@@ -16,7 +17,7 @@ class Items extends Component {
                 <div className='search-1'>
                     <p className='title'>Referals link</p>
                     <div className='link-copy'>
-                        <p className='link-text'>https://pegaswap.com/signup?sponsorkey=winwin</p>
+                        <a href={"https://pegaswap.com/signup?sponsorkey=" + this.props.sponsorKey} className='link-text'>https://pegaswap.com/signup?sponsorkey={this.props.sponsorKey}</a>
                         <Image src={copyIcon} />
                     </div>
                 </div>
@@ -24,7 +25,12 @@ class Items extends Component {
                     <p className='title'>Referals code</p>
                     <div className='link-copy text'>
                         <p className='link-text'>
-                            {/* {this.props.dataUser.data.customer_code} */}
+                            <CopyToClipboard
+                                text={this.props.sponsorKey}
+                            >
+                                <span>{this.props.sponsorKey}</span>
+                            </CopyToClipboard>
+
                         </p>
                         <Image src={copyIcon} />
                     </div>
@@ -36,7 +42,6 @@ class Items extends Component {
 class OneDashBoardContent extends Component {
 
     render() {
-        // console.log(this.props.dataUser.data);
         return (
             <div className="one-items">
                 <div className='image-dashboard'>
@@ -54,13 +59,14 @@ class OneDashBoardContent extends Component {
 
 class DashBoard extends Component {
     render() {
+        console.log(this.props.dataUser);
         return (
             <div className='dashboard container'>
                 <div className='title'>Dashboard</div>
-                <Items {...this.props} />
+                <Items sponsorKey={this.props.dataUser.data.sponsorKey} />
                 <div className='dashboard-content'>
                     <OneDashBoardContent src={homeicon}
-                    price={this.props.dataUser.data.levelInfoCommissions.title}
+                        price={this.props.dataUser.data.levelInfoCommissions.title}
                     />
                     <OneDashBoardContent src={members} price='1000' title='Members' />
                     <OneDashBoardContent src={global} price='$1000' title='Total networks buy' />
@@ -75,8 +81,6 @@ class DashBoard extends Component {
 const mapStateToProps = (state, ownProps) => {
     return {
         dataUser: state.dataUser,
-        // alertTitle: state.alertTitle,
-        // alertContent: state.alertContent,
     }
 }
 export default connect(mapStateToProps)(DashBoard)

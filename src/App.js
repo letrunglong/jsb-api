@@ -3,16 +3,16 @@ import { Image } from 'antd';
 import './App.css';
 import { BrowserRouter as Router, Redirect, Route} from "react-router-dom";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import Packages from './Components/Packages';
-import Wallets from './Components/Wallets';
-import Pools from './Components/Pools';
+import Packages from './Components/packages/Packages';
+import Wallets from './Components/wallets/Wallets';
+import Pools from './Components/pools/Pools';
 import Networks from './Components/Networks';
-import Settings from './Components/Settings';
+import Settings from './Components/settings/Settings';
 import AuthLogin from './Components/Auth/Login/Login';
 import Authforgot from './Components/Auth/forgot/index';
 import PublicLayout from './common/Layout/PublicLayouts';
 import PrivateLayout from './common/Layout/PrivateLayouts';
-import DashBoard from './Components/Dashboard';
+import DashBoard from './Components/dashboard/Dashboard';
 import { connect } from 'react-redux';
 import SignUpPage from 'Components/Auth/Register/Signup';
 import AlertMessages from "../src/common/alert/index"
@@ -32,11 +32,9 @@ const PublicRoute = ({ component: Component, ...rest }) => {
       //   checkLogin() ? (
       //   <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
       // ) : 
-      (
         <PublicLayout {...rest}>
           <Component {...props}></Component>
         </PublicLayout>
-      )
       }
     />
   );
@@ -66,7 +64,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 class App extends Component {
   logOut = () => {
     localStorage.removeItem("isLogin")
-    // console.log(localStorage.getItem("isLogin"));
     return <Redirect to="/login" />
   }
   Loginn = () => {

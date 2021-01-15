@@ -1,11 +1,11 @@
 import React from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
-import DashBoard from "../../Components/Dashboard";
-import Packages from "../../Components/Packages";
-import Wallets from "../../Components/Wallets";
-import Pools from "../../Components/Pools";
+import DashBoard from "../../Components/dashboard/Dashboard";
+import Packages from "../../Components/packages/Packages";
+import Wallets from "../../Components/wallets/Wallets";
+import Pools from "../../Components/pools/Pools";
 import Networks from "../../Components/Networks";
-import Settings from "../../Components/Settings";
+import Settings from "../../Components/settings/Settings";
 import { Image, Layout } from "antd";
 import SideNav, { NavItem, NavIcon } from '@trendmicro/react-sidenav';
 import dashboardIcon from '../../images/icons/dashboard.svg';

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Input, Tabs } from 'antd'
 import Search from 'antd/lib/input/Search';
+import { connect } from 'react-redux';
 class LastElement extends Component {
   render() {
     return (
@@ -39,10 +40,12 @@ class TabPersonal extends Component {
   render() {
     return (
       <div className='personal-content tab-content'>
-        <ItemsPersonalTab firstText='First Name' secondText='Last Name' firstInput='David' secondInput='David' />
-        <ItemsPersonalTab firstText='Birth day' secondText='Gender' firstInput='20/12/2020' secondInput='Male' />
-        <ItemsPersonalTab firstText='Address' secondText='Country' firstInput='123 Abcd' secondInput='USA' />
-        <LastElement firstText='Phone Number' firstInput='123 4567' />
+        <ItemsPersonalTab firstText='First Name' secondText='Last Name' firstInput={this.props.myProps.dataUser.data.first_name}
+         secondInput={this.props.myProps.dataUser.data.last_name}
+         />
+        <ItemsPersonalTab firstText='Birth day' secondText='Gender' firstInput='' secondInput={this.props.myProps.dataUser.data.last_name.gender} />
+        <ItemsPersonalTab firstText='Address' secondText='Country' firstInput={this.props.myProps.dataUser.data.address} secondInput={this.props.myProps.dataUser.data.country} />
+        <LastElement firstText='Phone Number' firstInput={this.props.myProps.dataUser.data.phone_number} />
       </div>
     );
   }
@@ -98,10 +101,10 @@ class TabAuthen extends Component {
 
 
 const { TabPane } = Tabs;
-const Tab = () => (
+const Tab = (data) => (
   <Tabs defaultActiveKey="1">
-    <TabPane tab="Personal" key="1">
-      <TabPersonal />
+    <TabPane tab="Personal" key="1" >
+      <TabPersonal myProps={data}/>
     </TabPane>
     <TabPane tab="Authentication" key="2">
       <TabAuthen />
@@ -120,11 +123,16 @@ class Settings extends Component {
     return (
       <div className='settings container'>
         <div className='settings-content'>
-          <Tab />
+          <Tab dataUser={this.props.dataUser}/>
         </div>
       </div>
     );
   }
 }
 
-export default Settings;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    dataUser: state.dataUser
+  }
+}
+export default connect(mapStateToProps)(Settings)

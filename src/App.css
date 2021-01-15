@@ -101,6 +101,9 @@ main.main{
   border: 1px solid white;
   border-radius: 5px;
 }
+.App .container .main .dashboard .dashboard-search .search-2{
+  width: 49%;
+}
 .App .container .main .dashboard .dashboard-search .link-copy{
   display: flex;
   width: 100%;
@@ -109,8 +112,16 @@ main.main{
   margin-left: 0;
   height: 50px;
   line-height: 0px;
-  padding: 0 20px;
-  padding-right: 0;
+  padding: 5px 20px;
+  justify-content: space-between;
+  color: white !important;
+  cursor: pointer;
+}
+.App .container .main .dashboard .dashboard-search .link-copy .link-text{
+  line-height: 1.5;
+}
+.App .container .main .dashboard .dashboard-search .link-copy.text .link-text{
+  line-height: 0;
 }
 .App .container .main .dashboard .dashboard-search .link-copy p{
   
@@ -118,16 +129,18 @@ main.main{
   margin-top: 20px;
 }
 .App .container .main .dashboard .dashboard-search .link-copy.text{
-  width: 700px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .App .container .main .dashboard .dashboard-search .link-copy img.ant-image-img{
-  margin-top: 8px !important;
+  /* margin-top: 8px !important;
   margin-left: 50px !important;
   width: auto;
-  margin-right: 15px;
+  margin-right: 15px; */
 }
 .App .container .main .dashboard .dashboard-search .link-copy.text img.ant-image-img{
-  margin-left: 555px !important;
+  /* margin-left: 555px !important; */
 }
 .App .container .main .dashboard .dashboard-content{
   display: flex;
@@ -209,10 +222,11 @@ main.main{
   display: flex;
   width: 100%;
   padding: 20px 20px;
-  /* justify-content: flex-start; */
+  /* padding-right: 0; */
+  text-align: right;
+  justify-content: space-between;
 }
 .App .container .main .packages .packages-content .item .item-top .item-top-left{
-  width: 77%;
   display: flex;
   line-height: 0;
 }
@@ -220,20 +234,27 @@ main.main{
   margin-top: 10px;
   margin-left: 15px;
   font-size: 15px;
+  
+}
+.App .container .main .packages .packages-content .item .item-top .item-top-left .item-text span{
+  float: left;
 }
 .App .container .main .packages .packages-content div.item .item-top .item-top-right{
-  width: 20%;
-  font-size: 30px;
-  position: relative;
-  top: -10px;left: 0px;
+  font-size: 25px;
+}
+.App .container .main .packages .packages-content div.item .item-top .item-top-right p {
+  cursor: pointer;
 }
 .App .container .main .packages .packages-content .item .item-bottom{
-  cursor: pointer;
   text-align: center;
   border-top: 1px solid white;
   padding-top: 15px;
   padding-bottom: 15px;
   width: 100%;
+  cursor: pointer;
+}
+.App .container .main .packages .packages-content .item .item-bottom.not-available{
+  cursor: not-allowed;
 }
 .ant-modal-content ,.ant-modal-header,.ant-modal-footer,.ant-modal-title{
   background-color: #29153A !important;
