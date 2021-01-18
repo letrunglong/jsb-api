@@ -6,7 +6,9 @@ import './styles.scss'
 import { ROOT_API_URL, ROUTE } from 'common/constants';
 import { Component } from 'react';
 import axios from 'axios';
-import { TYPES } from './redux/contants';
+import { TYPES } from '../../redux/constants/contants';
+import store from "../../redux/store"
+
 
 class AuthLogin extends Component {
     constructor(props) {
@@ -39,8 +41,11 @@ class AuthLogin extends Component {
         }
             ).then( respon =>{
                 if(respon.data.status_code === 200){
-                    this.props.GetLogin(respon.data,respon.data.message)
-                    localStorage.setItem("isLogin",respon.data.data.token)
+                    // this.props.GetLogin(respon.data,respon.data.message)
+                    store.dispatch({type:TYPES.AUTH_LOGIN,
+                        dataUser:respon.data,
+                        alertTitle:respon.data.message})
+            
                     this.props.history.push(ROUTE.DASHBOARD)
                 }
             })
@@ -89,20 +94,5 @@ class AuthLogin extends Component {
         </div>
     }
 }
-const mapStateToProps = (state, ownProps) => {
-    return {
-        // isLogin: state.isLogin
-    }
-}
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        GetLogin: (dataUser,alertTitle) => {
-            dispatch({
-                type: TYPES.AUTH_LOGIN,
-                dataUser,
-                alertTitle
-            })
-        },
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(AuthLogin)
+
+export default connect()(AuthLogin)

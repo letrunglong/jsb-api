@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import { Image } from 'antd';
-import './App.css';
+import '../App.css';
 import { BrowserRouter as Router, Redirect, Route} from "react-router-dom";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
-import Packages from './Components/packages/Packages';
-import Wallets from './Components/wallets/Wallets';
-import Pools from './Components/pools/Pools';
-import Networks from './Components/Networks';
-import Settings from './Components/settings/Settings';
-import AuthLogin from './Components/Auth/Login/Login';
-import Authforgot from './Components/Auth/forgot/index';
-import PublicLayout from './common/Layout/PublicLayouts';
-import PrivateLayout from './common/Layout/PrivateLayouts';
-import DashBoard from './Components/dashboard/Dashboard';
+import Packages from './packages/Packages';
+import Wallets from './wallets/Wallets';
+import Pools from './pools/Pools';
+import Networks from './Networks';
+import Settings from './settings/Settings';
+import AuthLogin from './Auth/Login/Login';
+import Authforgot from './Auth/forgot/index';
+import PublicLayout from '../common/Layout/PublicLayouts';
+import PrivateLayout from '../common/Layout/PrivateLayouts';
+import DashBoard from './dashboard/Dashboard';
 import { connect } from 'react-redux';
 import SignUpPage from 'Components/Auth/Register/Signup';
-import AlertMessages from "../src/common/alert/index"
+import AlertMessages from "../common/alert/index"
 import { ROUTE } from 'common/constants';
-import avatar from "./images/icons/avatar.svg"
+import avatar from "../images/icons/avatar.svg"
+
+
 const checkLogin = () => {
   if (localStorage.getItem("isLogin")) {
     return true
@@ -107,7 +109,7 @@ class App extends Component {
 }
 const mapStateToProps = (state, ownProps) => {
   return {
-    dataUser: state.dataUser
+    dataUser: state.loginReducers.dataUser
   }
 }
 export default connect(mapStateToProps)(App)

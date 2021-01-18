@@ -130,9 +130,7 @@ class Settings extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    dataUser: state.dataUser
-  }
-}
+const mapStateToProps = state =>({
+  dataUser:state.loginReducers.dataUser
+})
 export default connect(mapStateToProps)(Settings)

@@ -53,8 +53,6 @@ class Commission extends Component {
             return this.state.amountToBuy.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')
     }
     render() {
-        console.log(this.state.commission_earned);
-        console.log(this.props.dataUser.data.commissions_earned);
         return (
             <div className='item'>
                 <div className='item-top'>
@@ -88,9 +86,5 @@ class Commission extends Component {
         );
     }
 }
-const mapStateToProps = (state, ownProps) => {
-    return {
-        dataUser: state.dataUser
-    }
-}
+const mapStateToProps = state => ({dataUser:state.loginReducers.dataUser})
 export default connect(mapStateToProps)(Commission)

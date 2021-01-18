@@ -114,7 +114,7 @@ class Pools extends Component {
 }
 const mapStateToProps = (state, ownProps) => {
     return {
-        dataUser: state.dataUser
+        dataUser: state.loginReducers.dataUser
     }
 }
 export default connect(mapStateToProps)(Pools)

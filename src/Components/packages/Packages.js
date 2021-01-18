@@ -5,8 +5,8 @@ import 'antd/dist/antd.css';
 import axios from 'axios';
 import { ROOT_API_URL } from 'common/constants';
 import { connect } from 'react-redux';
-import { TYPES } from 'Components/Auth/Login/redux/contants';
-
+import { TYPES } from 'Components/redux/constants/contants';
+import store from "../redux/store"
 class OneItem extends Component {
     constructor(props) {
         super(props);
@@ -103,7 +103,7 @@ class Packages extends Component {
         }
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         axios({
             url: `${ROOT_API_URL}/list-package?type=POOL`,
             headers: {
@@ -115,7 +115,10 @@ class Packages extends Component {
                 this.setState({
                     dataPackages: respon.data.data
                 })
-                this.props.setDataPackages(respon.data.data)
+                store.dispatch({
+                    type:TYPES.SET_DATA_PACKAGES,
+                    dataPackages:respon.data.data
+                })
             }
         })
     }
@@ -127,12 +130,11 @@ class Packages extends Component {
             arrCost.push(value.quantity - value.wasSale)
             arrCost = arrCost.filter((val) => val !== 0);
             let isTop = index > 2 ? "top" : "";
-            return <OneItem class={'item ' + isTop} price={value.price} costUpgrade={costUpgrade} {...this.props} arrCost={arrCost} title={value.title} />
+            return <OneItem class={'item ' + isTop} price={value.price} costUpgrade={costUpgrade} {...this.props} arrCost={arrCost} title={value.title} key/>
         })
         return data
     }
     render() {
-        console.log(this.state.dataPackages);
         return (
             <div className='packages container'>
                 <div className='title'>Packages</div>
@@ -145,18 +147,6 @@ class Packages extends Component {
         );
     }
 }
-const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        setDataPackages: (dataPackages) => {
-            dispatch({
-                type: TYPES.SET_DATA_PACKAGES, dataPackages
-            })
-        }
-    }
-}
-const mapStateToProps = (state, ownProps) => {
-    return {
-        dataPackages: state.dataPackages
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Packages)
+const mapStateToProps = state =>({dataPackages: state.packageReducers.dataPackages})
+
+export default connect(mapStateToProps)(Packages)

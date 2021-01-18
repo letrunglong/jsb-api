@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Image, Modal, Input, Button } from 'antd';
 import usdt from '../../images/wallets-img/usdt.svg';
-import usj from '../../images/wallets-img/usj.svg';
 import scan from '../../images/wallets-img/scan.svg';
 import { connect } from 'react-redux';
 import axios from 'axios';
@@ -47,7 +46,7 @@ class WalletItem extends Component {
     set50 = () => { this.setState({ amount: this.state.earnedData.find(val => val !== undefined) * 0.5 }) }
     set75 = () => { this.setState({ amount: this.state.earnedData.find(val => val !== undefined) * 0.75 }) }
     set100 = () => { this.setState({ amount: this.state.earnedData.find(val => val !== undefined) * 1 }) }
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         this.setState({
             earnedData: this.props.earned,
         })
@@ -160,7 +159,7 @@ class Wallets extends Component {
             dataWallets: []
         }
     }
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         axios({
             url: `${ROOT_API_URL}/wallet-trans/list`,
             method: "GET",
@@ -189,7 +188,7 @@ class Wallets extends Component {
                 m.getUTCFullYear()
 
             let isTop = index > 0 ? 'one' : ''
-            return <Content classname={'content ' + isTop} amount={amount} fee={value.type} code={value.code} status={value.status} date={dateString} />
+            return <Content classname={'content ' + isTop} amount={amount} fee={value.type} code={value.code} status={value.status} date={dateString} key />
         })
         return data
     }
@@ -198,7 +197,7 @@ class Wallets extends Component {
         let data = arr.map((value, key) => {
             if (value.unit === "USDTTRON")
                 return value.amount
-            return
+            return undefined
         })
         return data
     }
@@ -210,7 +209,7 @@ class Wallets extends Component {
                     <div className='wallets-top'>
                         <WalletItem src={usdt} title='USDT TRON' earned={this.RenderWalletAmount()} />
                         {/* <WalletItem src={usj} title='USJ' earned={this.props.dataUser.data.commissions_earned} /> */}
-                        <Commission/>
+                        <Commission />
                     </div>
                     <div className='wallets-bottom'>
                         <div className='title'>Transaction</div>
@@ -221,9 +220,6 @@ class Wallets extends Component {
         );
     }
 }
-const mapStateToProps = (state, ownProps) => {
-    return {
-        dataUser: state.dataUser
-    }
-}
+const mapStateToProps = state=>({dataUser: state.loginReducers.dataUser})
+
 export default connect(mapStateToProps)(Wallets)
