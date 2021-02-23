@@ -2,7 +2,7 @@ import { Button, Image, Input } from 'antd';
 import Modal from 'antd/lib/modal/Modal';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import usj from '../../../images/wallets-img/usj.svg';
+import usj from 'assets/images/wallets-img/usj.svg';
 class Commission extends Component {
     constructor(props) {
         super(props);

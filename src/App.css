@@ -32,7 +32,7 @@ main.main{
   bottom:15px; left: 10px;
 }
 .sidenav---sidenav-toggle---1KRjR{
-  background-image: url('./images/icons/home.svg') !important;
+  background-image: url('assets/images/icons/home.svg') !important;
   z-index: 0 !important;
   background-size: cover;
   margin-left: 13px !important;
@@ -478,16 +478,16 @@ main.main{
   background-position-y: 10px;
 }
 .ant-tabs-nav-list .ant-tabs-tab:first-child{
-  background-image: url('./images/settings-img/personnal.svg') !important;
+  background-image: url('assets/images/settings-img/personnal.svg') !important;
 }
 .ant-tabs-nav-list .ant-tabs-tab:nth-child(2){
-  background-image: url('./images/settings-img/authen.svg') !important;
+  background-image: url('assets/images/settings-img/authen.svg') !important;
 }
 .ant-tabs-nav-list .ant-tabs-tab:nth-child(3){
-  background-image: url('./images/settings-img/twofactor.svg') !important;
+  background-image: url('assets/images/settings-img/twofactor.svg') !important;
 }
 .ant-tabs-nav-list .ant-tabs-tab:nth-child(4){
-  background-image: url('./images/settings-img/security.svg') !important;
+  background-image: url('assets/images/settings-img/security.svg') !important;
 }
 .ant-tabs-nav-list .ant-tabs-tab{
   background-position: top center;

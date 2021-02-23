@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Image, Modal, Input, Button } from 'antd';
-import usdt from '../../images/wallets-img/usdt.svg';
-import scan from '../../images/wallets-img/scan.svg';
+import usdt from 'assets/images/wallets-img/usdt.svg';
+import scan from 'assets/images/wallets-img/scan.svg';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { ROOT_API_URL } from 'common/constants';

@@ -1,22 +1,16 @@
 import { Form, Input, Button } from 'antd'
 import React from 'react'
 import { Link} from 'react-router-dom'
-import { connect} from "react-redux";
+import { connect, useDispatch} from "react-redux";
 import './styles.scss'
 import { ROOT_API_URL, ROUTE } from 'common/constants';
 import { Component } from 'react';
 import axios from 'axios';
-import { TYPES } from '../../redux/constants/contants';
+import { TYPES } from '../../redux/constants';
 import store from "../../redux/store"
 
 
 class AuthLogin extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-
-        }
-    }
     isChange = (event) => {
         const name = event.target.name
         const value = event.target.value
@@ -24,37 +18,38 @@ class AuthLogin extends Component {
             [name]:value
         })
     }
-    onFinish = () => {
-        const {email,password} =this.state
-        let token = "123456"
-        let obj = {}
-        obj.email = email
-        obj.password = password
-        obj.token = token
-        axios({
-            url: `${ROOT_API_URL}/login`,
-            method: "POST",
-            data: JSON.stringify(obj),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        }
-            ).then( respon =>{
-                if(respon.data.status_code === 200){
-                    // this.props.GetLogin(respon.data,respon.data.message)
-                    store.dispatch({type:TYPES.AUTH_LOGIN,
-                        dataUser:respon.data,
-                        alertTitle:respon.data.message})
-            
-                    this.props.history.push(ROUTE.DASHBOARD)
-                }
-            })
+    onFinish = (email,password) => {
+        // const {email,password} =this.state
+        // let token = "123456"
+        // let obj = {}
+        // obj.email = email
+        // obj.password = password
+        // obj.token = token
+        // axios({
+        //     url: `${ROOT_API_URL}/login`,
+        //     method: "POST",
+        //     data: JSON.stringify(obj),
+        //     headers: {
+        //         "Content-Type": "application/json"
+        //     }
+        // }
+        //     ).then( respon =>{
+        //         if(respon.data.status_code === 200){
+        //             store.dispatch({type:TYPES.AUTH_LOGIN,
+        //                 dataUser:respon.data,
+        //                 alertTitle:respon.data.message
+        //             })
+
+        //             this.props.history.push(ROUTE.DASHBOARD)
+        //         }
+        //     })
+        console.log(email,password);
     }
     render() {
         return <div className="container login">
             <div className="form-login">
                 <span className="title">SIGN IN</span>
-                <Form name="normal_login" onFinish={() => this.onFinish()} className="login-form">
+                <Form name="normal_login" onFinish={() => this.onFinish(this.state.email,this.state.password)} className="login-form">
                     <Form.Item
                         label="Username"
                         name="email"

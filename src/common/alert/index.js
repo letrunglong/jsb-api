@@ -1,4 +1,4 @@
-import { TYPES } from 'Components/redux/constants/contants';
+import { TYPES } from 'components/redux/constants';
 import React, { Component } from 'react';
 import { Alert, AlertContainer } from "react-bs-notifier";
 import { connect } from 'react-redux';

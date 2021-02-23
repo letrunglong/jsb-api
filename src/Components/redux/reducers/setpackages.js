@@ -1,9 +1,9 @@
-import {TYPES} from "../constants/contants"
+import {TYPES} from "../constants"
 
-const nameInitialState = {
+const InitialState = {
     dataPackages:""
 }
-export default function packageReducers  (state = nameInitialState, action) {
+export default function packageReducers  (state = InitialState, action) {
     switch (action.type) {
         case TYPES.SET_DATA_PACKAGES:
             return { ...state, dataPackages:action.dataPackages}

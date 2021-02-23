@@ -1,12 +1,12 @@
 import React from 'react';
 import { Image } from 'antd';
-import copyIcon from '../../images/icons/copyicon.svg';
-import homeicon from '../../images/icons/home.svg';
-import members from '../../images/dashboard-img/frend.svg';
-import global from '../../images/dashboard-img/global.svg';
-import totalCart from '../../images/dashboard-img/total.svg';
-import totalCommission from '../../images/dashboard-img/pega.svg';
-import totalDirect from '../../images/dashboard-img/direct.svg';
+import copyIcon from 'assets/images/icons/copyicon.svg';
+import homeicon from 'assets/images/icons/home.svg';
+import members from 'assets/images/dashboard-img/frend.svg';
+import global from 'assets/images/dashboard-img/global.svg';
+import totalCart from 'assets/images/dashboard-img/total.svg';
+import totalCommission from 'assets/images/dashboard-img/pega.svg';
+import totalDirect from 'assets/images/dashboard-img/direct.svg';
 import { connect } from 'react-redux';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 

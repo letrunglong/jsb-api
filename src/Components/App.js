@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Image } from 'antd';
 import '../App.css';
-import { BrowserRouter as Router, Redirect, Route} from "react-router-dom";
+import { BrowserRouter as Router, Redirect, Route } from "react-router-dom";
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import Packages from './packages/Packages';
 import Wallets from './wallets/Wallets';
 import Pools from './pools/Pools';
-import Networks from './Networks';
+import Networks from './network/Networks';
 import Settings from './settings/Settings';
 import AuthLogin from './Auth/Login/Login';
 import Authforgot from './Auth/forgot/index';
@@ -14,16 +14,17 @@ import PublicLayout from '../common/Layout/PublicLayouts';
 import PrivateLayout from '../common/Layout/PrivateLayouts';
 import DashBoard from './dashboard/Dashboard';
 import { connect } from 'react-redux';
-import SignUpPage from 'Components/Auth/Register/Signup';
+import SignUpPage from 'components/Auth/Register/Signup';
 import AlertMessages from "../common/alert/index"
-import { ROUTE } from 'common/constants';
-import avatar from "../images/icons/avatar.svg"
+import { ROUTE, USER_INFO_KEY } from 'common/constants';
+import avatar from "assets/images/icons/avatar.svg"
+import store from './redux/store';
+import { TYPES } from './redux/constants';
 
 
 const checkLogin = () => {
-  if (localStorage.getItem("isLogin")) {
+  if (localStorage.getItem("isLogin"))
     return true
-  }
   return false
 }
 const PublicRoute = ({ component: Component, ...rest }) => {
@@ -31,9 +32,9 @@ const PublicRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-      //   checkLogin() ? (
-      //   <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
-      // ) : 
+        //   checkLogin() ? (
+        //   <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
+        // ) : 
         <PublicLayout {...rest}>
           <Component {...props}></Component>
         </PublicLayout>
@@ -64,25 +65,30 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   );
 };
 class App extends Component {
+
   logOut = () => {
-    localStorage.removeItem("isLogin")
-    return <Redirect to="/login" />
+    store.dispatch({
+      type: TYPES.AUTH_LOGOUT
+    })
+
   }
   Loginn = () => {
-    if (localStorage.getItem("isLogin")) {
+    if (this.props.dataUser === USER_INFO_KEY)
+      return 
     return <div className="nav-item">
-      <span className="name" onClick={() => this.logOut()}>
+      <span className="name" onClick={() => this.logOut()} style={{cursor:"pointer"}}>
         {this.props.dataUser.data.sponsor.first_name} {this.props.dataUser.data.sponsor.last_name}
       </span>
       <Image src={avatar} />
     </div>
-    }
   }
+
+
   render() {
     return (
       <div className="App">
         {
-          // this.Loginn()
+          this.Loginn()
         }
         <AlertMessages />
         <Router>

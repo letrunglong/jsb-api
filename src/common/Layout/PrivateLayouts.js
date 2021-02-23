@@ -1,20 +1,20 @@
 import React from "react";
 import { Switch, Route, useHistory } from "react-router-dom";
-import DashBoard from "../../Components/dashboard/Dashboard";
-import Packages from "../../Components/packages/Packages";
-import Wallets from "../../Components/wallets/Wallets";
-import Pools from "../../Components/pools/Pools";
-import Networks from "../../Components/Networks";
-import Settings from "../../Components/settings/Settings";
+import DashBoard from "../../components/dashboard/Dashboard";
+import Packages from "../../components/packages/Packages";
+import Wallets from "../../components/wallets/Wallets";
+import Pools from "../../components/pools/Pools";
+import Networks from "../../components/network/Networks";
+import Settings from "../../components/settings/Settings";
 import { Image, Layout } from "antd";
 import SideNav, { NavItem, NavIcon } from '@trendmicro/react-sidenav';
-import dashboardIcon from '../../images/icons/dashboard.svg';
-import networkIcon from '../../images/icons/network.svg';
-import packageIcon from '../../images/icons/package.svg';
-import poolIcon from '../../images/icons/pool.svg';
-import settingIcon from '../../images/icons/setting.svg';
-import walletIcon from '../../images/icons/wallet.svg';
-import background from '../../images/background.svg';
+import dashboardIcon from 'assets/images/icons/dashboard.svg';
+import networkIcon from 'assets/images/icons/network.svg';
+import packageIcon from 'assets/images/icons/package.svg';
+import poolIcon from 'assets/images/icons/pool.svg';
+import settingIcon from 'assets/images/icons/setting.svg';
+import walletIcon from 'assets/images/icons/wallet.svg';
+import background from 'assets/images/background.svg';
 
 
 var sectionStyle = {

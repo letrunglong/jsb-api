@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import P from '../../images/packages-img/p.svg';
+import P from 'assets/images/packages-img/p.svg';
 import { Image, Modal, Input, Button } from 'antd';
 import 'antd/dist/antd.css';
 import axios from 'axios';
 import { ROOT_API_URL } from 'common/constants';
 import { connect } from 'react-redux';
-import { TYPES } from 'Components/redux/constants/contants';
+import { TYPES } from 'components/redux/constants';
 import store from "../redux/store"
+
+
+
 class OneItem extends Component {
     constructor(props) {
         super(props);

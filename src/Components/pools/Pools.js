@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Image, Modal } from 'antd'
-import Unicorn from '../../images/pools-img/unicorn.svg'
+import Unicorn from 'assets/images/pools-img/unicorn.svg'
 import { connect } from 'react-redux';
 
 
